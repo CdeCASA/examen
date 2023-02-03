@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+
+  tomcat:
+    image: tomcat:9.0
+    volumes:
+    - tomcat:/usr/local/tomcat/webapps
+    container_name: aplicacionjava
+    ports:
+    - 8080:8080
+
+  nginx:
+   image: nginx:latest
+   volumes:
+   - nginx:/etc/nginx/conf.d
+   ports:
+   - 80:80
+
+
+volumes:
+  tomcat:
+  nginx:
